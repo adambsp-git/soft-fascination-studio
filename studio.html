@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Soft Fascination Studio · A.D.A.M</title><style>@font-face{font-family:systemFallback;src:local('Arial')}*{box-sizing:border-box} :root{font-family:Arial,system-ui,sans-serif;color:#e2e7d9;background:#0d1716;font-synthesis:none}body{margin:0}header,main,footer{max-width:1540px;margin:auto}header{display:flex;justify-content:space-between;align-items:center;padding:30px 5%;border-bottom:1px solid #30423c}.brand{text-decoration:none;color:inherit;letter-spacing:.18em;font-weight:700}.brand span{font-size:10px;font-weight:400;margin-left:20px;color:#99afa1;letter-spacing:.12em}button,input,select{font:inherit}button,select,input[type=number]{background:#152522;border:1px solid #41564b;border-radius:4px;color:#e2e7d9;min-height:42px;padding:10px 12px}button{cursor:pointer;transition:background .15s}button:hover{background:#30493e}button:disabled{opacity:.5;cursor:wait}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #e0b77f;outline-offset:4px}main{padding:0 5%}.intro{padding:52px 0 34px}.eyebrow{font-size:10px;letter-spacing:.2em;color:#b7c6b8}h1{font-size:clamp(42px,5.2vw,76px);line-height:1.02;letter-spacing:-.045em;font-weight:400;margin:18px 0}h1 em{font-family:Georgia,serif;font-weight:400;color:#cfb98f}.lede{font-size:15px;color:#a4b9ac;line-height:1.7}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:32px;align-items:start}.stage{position:relative;background:#112b29;border:1px solid #344b3f;aspect-ratio:16/9;overflow:hidden;display:grid;place-items:center;min-height:220px;max-height:70vh}#art{width:100%;height:100%;position:absolute;inset:0;display:grid;place-items:center}#art svg{width:100%;height:100%;object-fit:contain}.stage-tag{position:absolute;bottom:22px;left:24px;font-size:10px;letter-spacing:.2em;color:#c0ccba;pointer-events:none}.stage:fullscreen{width:100vw;height:100vh;max-height:none;border:0;background:#0d1716}.stage:fullscreen .stage-tag{display:none}.transport{display:flex;gap:14px;align-items:center;margin-top:16px}.scrub{flex:1;min-width:24px}.transport output{font-size:11px;color:#a9bdb0;white-space:nowrap;font-variant-numeric:tabular-nums}.caption{font-family:Georgia,serif;font-style:italic;color:#a4b5a6;font-size:14px;margin:20px 0}.panel-head{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;color:#b7c6b8;border-bottom:1px solid #344b3f;padding:0 0 16px;margin-bottom:18px}aside label{display:flex;flex-direction:column;gap:9px;margin-bottom:17px;font-size:12px;color:#bfcbbf}label>span{display:flex;justify-content:space-between}select,input[type=number]{width:100%;font-size:12px}input[type=range]{width:100%;accent-color:#cdb88b;min-height:24px;cursor:pointer}.seed-row{display:flex;align-items:end;gap:8px}.seed-row label{flex:1;min-width:0}.seed-row button{margin-bottom:17px;font-size:12px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}.buttons button{font-size:11px}.primary{background:#d1bd96;color:#152822;border-color:#d1bd96}.primary:hover{background:#e0cca7}#status{font-size:12px;line-height:1.6;min-height:38px;color:#dec295}.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:50px;padding:36px 0 48px;border-top:1px solid #344b3f}.notes span{font-size:10px;color:#cab58f}.notes h2{font-size:17px;font-weight:400}.notes p{font-size:13px;color:#a9b9ac;line-height:1.8}footer{border-top:1px solid #30423c;padding:24px 5%;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.12em;color:#a0b3a5}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:850px){.workspace{grid-template-columns:1fr}.intro{padding-top:36px}aside{max-width:none}.notes{gap:24px}.brand span{display:none}.stage{min-height:180px}.transport{gap:8px}.transport button{font-size:11px;padding:8px}.notes{grid-template-columns:1fr;margin-top:28px}.notes>div{max-width:580px}.notes h2{margin:10px 0}footer{gap:20px;line-height:1.7}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body><header><a class="brand" href="#main">A.D.A.M <span>OPEN STUDIO / 001</span></a><button id="language" aria-label="切换到中文">中文</button></header>
+<main id="main"><div class="intro"><p class="eyebrow" data-i18n="eyebrow">A FIELD GUIDE TO SLOWER IMAGES</p><h1>Soft Fascination<br><em>Studio.</em></h1><p class="lede" data-i18n="lede">Compose a little rain. A surface of water. A canopy in motion.</p></div>
+<div class="workspace"><section class="stage-area" aria-label="Composition preview"><div class="stage" id="stage"><div id="art" aria-hidden="true"></div><div class="stage-tag" id="sceneTag">01 / WATER</div></div><div class="transport"><button id="play" aria-pressed="false">Play</button><label class="scrub"><span class="sr-only" data-i18n="timeline">Timeline</span><input id="time" type="range" min="0" max="1000" value="0"></label><output id="clock">0.0 / 12 s</output><button id="fullscreen" data-i18n="fullscreen">Fullscreen</button></div><p class="caption" data-i18n="caption">A composition, not a prescription. Move at your own pace.</p></section>
+<aside aria-label="Composition settings"><div class="panel-head"><span data-i18n="compose">COMPOSE</span><span>v0.1</span></div>
+<label><span data-i18n="scene">Scene</span><select id="scene"><option value="water" data-i18n="water">Water / ripples</option><option value="rain" data-i18n="rain">Rain / falling lines</option><option value="canopy" data-i18n="canopy">Canopy / drifting leaves</option></select></label>
+<label><span data-i18n="palette">Palette</span><select id="palette"><option value="moss" data-i18n="moss">Moss & brass</option><option value="dusk" data-i18n="dusk">Dusk & clay</option><option value="ink" data-i18n="ink">Ink & mist</option></select></label>
+<label><span><span data-i18n="density">Density</span> <output id="densityValue">28</output></span><input id="density" type="range" min="8" max="64" value="28"></label>
+<label><span><span data-i18n="motion">Motion amplitude</span> <output id="motionValue">55%</output></span><input id="motion" type="range" min="0" max="100" value="55"></label>
+<label><span data-i18n="duration">Loop duration · seconds</span><input id="duration" type="number" min="4" max="60" step="1" value="12"></label>
+<div class="seed-row"><label><span data-i18n="seed">Seed</span><input id="seed" type="number" min="0" max="4294967295" step="1" value="1987"></label><button id="random" data-i18n="shuffle">Shuffle</button></div>
+<label><span data-i18n="format">Export format</span><select id="format"><option value="1280,720">Landscape · 1280 × 720</option><option value="1080,1920">Portrait · 1080 × 1920</option><option value="1080,1080">Square · 1080 × 1080</option><option value="1920,1080">Full HD · 1920 × 1080</option></select></label>
+<div class="buttons"><button id="png" class="primary" data-i18n="png">Export PNG</button><button id="svg" data-i18n="svg">Export SVG</button><button id="save" data-i18n="save">Save preset</button><button id="import" data-i18n="import">Import preset</button><button id="html" data-i18n="html">Export loop HTML</button><button id="reset" data-i18n="reset">Reset</button></div><input hidden type="file" id="file" accept=".json,application/json"><p id="status" role="status" aria-live="polite"></p></aside></div>
+<section class="notes"><div><span>01</span><h2 data-i18n="note1">Made for making.</h2><p data-i18n="body1">A small instrument for artists, filmmakers and creative coders. Export a still, exchange a preset, or take a loop into an installation.</p></div><div><span>02</span><h2 data-i18n="note2">Yours, locally.</h2><p data-i18n="body2">No account. No analytics. No external assets. Your composition stays in this browser unless you export it.</p></div><div><span>03</span><h2 data-i18n="note3">Leave room for attention.</h2><p data-i18n="body3">Inspired by natural rhythms. This is an artistic tool, without claims about brain activity, therapy or measured attention restoration.</p></div></section></main><footer><span>A.D.A.M / ART · DESIGN · CODE</span><span>MIT LICENSE / 2026</span></footer><script type="module">/** Versioned, deliberately small interchange format. All inputs are untrusted. */
+const SCENES = Object.freeze(['rain', 'water', 'canopy']);
+const PALETTES = Object.freeze({
+  moss: Object.freeze(['#112b29', '#729887', '#ced9b6', '#dfad77']),
+  dusk: Object.freeze(['#25273e', '#787994', '#d4bfbc', '#d49c7c']),
+  ink: Object.freeze(['#182427', '#658185', '#c3d5d2', '#ddd0ab']),
+});
+const DEFAULT = Object.freeze({version: 1, scene: 'water', palette: 'moss', seed: 1987, density: 28, motion: 0.55, duration: 12, width: 1280, height: 720});
+const keys = Object.keys(DEFAULT);
+function number(value, low, high, integer, name) {
+  if (typeof value !== 'number' || !Number.isFinite(value) || value < low || value > high || (integer && !Number.isInteger(value))) {
+    throw new Error(`${name} must be ${integer ? 'an integer' : 'a number'} between ${low} and ${high}.`);
+  }
+  return value;
+}
+function validateConfig(input) {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('Preset must be an object.');
+  if (Object.keys(input).some(key => !keys.includes(key))) throw new Error('Unknown preset field.');
+  const c = {...DEFAULT, ...input};
+  if (c.version !== 1) throw new Error('Unsupported preset version.');
+  if (!SCENES.includes(c.scene)) throw new Error('Unknown scene.');
+  if (!Object.hasOwn(PALETTES, c.palette)) throw new Error('Unknown palette.');
+  number(c.seed, 0, 4294967295, true, 'seed');
+  number(c.density, 8, 64, true, 'density');
+  number(c.motion, 0, 1, false, 'motion');
+  number(c.duration, 4, 60, false, 'duration');
+  number(c.width, 320, 3840, true, 'width');
+  number(c.height, 320, 3840, true, 'height');
+  if (c.width * c.height > 8294400) throw new Error('Resolution exceeds 8,294,400 pixels.');
+  return Object.freeze(c);
+}
+function parsePreset(text) {
+  if (typeof text !== 'string' || text.length > 8192) throw new Error('Preset is too large (8 KB maximum).');
+  return validateConfig(JSON.parse(text));
+}
+function serializePreset(config) { return JSON.stringify(validateConfig(config), null, 2) + '\n'; }
+function loopPhase(time, duration) {
+  if (!Number.isFinite(time) || !Number.isFinite(duration) || duration <= 0) throw new Error('Invalid time or duration.');
+  return ((time % duration) + duration) % duration / duration;
+}
+function randomSequence(seed) {
+  let state = seed >>> 0;
+  return () => {
+    state = (state + 0x6D2B79F5) >>> 0;
+    let t = Math.imul(state ^ state >>> 15, state | 1);
+    t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+const TAU = Math.PI * 2;
+const f = n => Number(n.toFixed(3));
+/** Pure SVG renderer. No DOM, external assets, scripts, fonts, or network. */
+function renderSVG(input, seconds = 0) {
+  const c = validateConfig(input);
+  const p = loopPhase(seconds, c.duration);
+  const r = randomSequence(c.seed);
+  const [bg, mid, light, accent] = PALETTES[c.palette];
+  const w = c.width, h = c.height, unit = Math.min(w,h), a = p * TAU;
+  const shapes = [];
+  if (c.scene === 'water') {
+    // Fixed centers and oscillating radial fields: no wrap discontinuity.
+    for (let i = 0; i < c.density; i++) {
+      const x = r()*w, y = r()*h, radius = unit*(0.04+r()*0.15), phase = r()*TAU;
+      const pulse = (1+c.motion*Math.sin(a+phase))/2;
+      for(let j=0;j<4;j++) {
+        const rad = radius*(0.5+j*0.28+c.motion*0.18*Math.sin(a+phase));
+        shapes.push(`<ellipse cx="${f(x)}" cy="${f(y)}" rx="${f(rad)}" ry="${f(rad*0.38)}" fill="none" stroke="${i%6===0?accent:light}" stroke-width="${f(unit/900)}" opacity="${f(0.035+(0.14+0.07*pulse)*(1-j/5))}"/>`);
+      }
+    }
+  } else if (c.scene === 'rain') {
+    for (let i=0;i<c.density*3;i++) {
+      const x=r()*w, offset=r(), length=unit*(0.025+r()*0.1), cycles=1+Math.floor(r()*2);
+      // Vertical travel wraps only outside the viewport. motion=0 is static.
+      const travel=c.motion===0?offset:(offset+p*cycles)%1;
+      const y=travel*(h+2*length)-length;
+      const drift=c.motion*unit*0.025*Math.sin(a+r()*TAU);
+      shapes.push(`<path d="M ${f(x+drift)} ${f(y)} l ${f(-length*0.15)} ${f(length)}" stroke="${light}" stroke-width="${f(unit*(0.0008+r()*0.001))}" opacity="${f(0.1+r()*0.3)}" stroke-linecap="round"/>`);
+    }
+    for(let i=0;i<7;i++) {
+      const y=h*(0.78+i*0.045);
+      shapes.push(`<path d="M 0 ${f(y)} Q ${f(w/2)} ${f(y-18*c.motion*Math.sin(a+i))} ${w} ${f(y)}" fill="none" stroke="${mid}" opacity="0.25"/>`);
+    }
+  } else {
+    for(let i=0;i<c.density;i++) {
+      const x=r()*w,y=r()*h,size=unit*(0.07+r()*0.15),phase=r()*TAU;
+      const angle=r()*360+12*c.motion*Math.sin(a+phase);
+      const dx=unit*0.025*c.motion*Math.sin(a+phase);
+      const dy=unit*0.015*c.motion*Math.cos(a+phase);
+      shapes.push(`<g transform="translate(${f(x+dx)} ${f(y+dy)}) rotate(${f(angle)})" opacity="${f(0.16+r()*0.3)}"><path d="M ${f(-size)} 0 Q 0 ${f(-size*0.8)} ${f(size)} 0 Q 0 ${f(size*0.8)} ${f(-size)} 0" fill="${i%5===0?accent:mid}"/><path d="M ${f(-size)} 0 L ${f(size)} 0" stroke="${light}" stroke-width="${f(unit/1300)}" opacity="0.5"/></g>`);
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${c.scene} generative composition"><defs><radialGradient id="glow"><stop stop-color="${mid}" stop-opacity="0.24"/><stop offset="1" stop-color="${bg}" stop-opacity="0"/></radialGradient></defs><rect width="${w}" height="${h}" fill="${bg}"/><ellipse cx="${f(w*0.62)}" cy="${f(h*0.42)}" rx="${f(w*0.65)}" ry="${f(h*0.8)}" fill="url(#glow)"/>${shapes.join('')}<rect x="1" y="1" width="${w-2}" height="${h-2}" fill="none" stroke="${light}" stroke-opacity="0.06"/></svg>`;
+}
+
+function createPlayerHTML(config, engineSource) {
+  const c = validateConfig(config);
+  // engineSource is bundled first-party source, never user-supplied text.
+  return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Soft Fascination Loop</title><style>body{margin:0;background:#101a18;color:#e0e9dc;font:14px system-ui}#art{height:100vh;display:grid;place-items:center}svg{max-width:100%;max-height:100vh;width:auto;height:auto}button{position:fixed;bottom:16px;left:16px;padding:12px;border:1px solid #8ea997;background:#142621;color:inherit}button:focus-visible{outline:3px solid #f0c889}</style><div id="art" aria-label="Generative visual composition"></div><button id="play" aria-pressed="false">Play</button><script type="module">${engineSource.replaceAll('<\/script', '<\\/script')}
+const config=${JSON.stringify(c)};
+const art=document.querySelector('#art'), button=document.querySelector('#play');
+let elapsed=0,last=null,playing=false;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+function draw(){art.innerHTML=renderSVG(config,elapsed);}
+function stop(){playing=false;last=null;button.textContent='Play';button.setAttribute('aria-pressed','false');}
+function tick(now){if(!playing)return;if(last!==null)elapsed=(elapsed+(now-last)/1000)%config.duration;last=now;draw();requestAnimationFrame(tick);}
+button.onclick=()=>{if(playing)stop();else{playing=true;last=null;button.textContent='Pause';button.setAttribute('aria-pressed','true');requestAnimationFrame(tick);}};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+reduce.addEventListener('change',()=>{if(reduce.matches)stop();});
+draw();
+<\/script></html>`;
+}
+
+const ENGINE_SOURCE = "/** Versioned, deliberately small interchange format. All inputs are untrusted. */\nconst SCENES = Object.freeze(['rain', 'water', 'canopy']);\nconst PALETTES = Object.freeze({\n  moss: Object.freeze(['#112b29', '#729887', '#ced9b6', '#dfad77']),\n  dusk: Object.freeze(['#25273e', '#787994', '#d4bfbc', '#d49c7c']),\n  ink: Object.freeze(['#182427', '#658185', '#c3d5d2', '#ddd0ab']),\n});\nconst DEFAULT = Object.freeze({version: 1, scene: 'water', palette: 'moss', seed: 1987, density: 28, motion: 0.55, duration: 12, width: 1280, height: 720});\nconst keys = Object.keys(DEFAULT);\nfunction number(value, low, high, integer, name) {\n  if (typeof value !== 'number' || !Number.isFinite(value) || value < low || value > high || (integer && !Number.isInteger(value))) {\n    throw new Error(`${name} must be ${integer ? 'an integer' : 'a number'} between ${low} and ${high}.`);\n  }\n  return value;\n}\nfunction validateConfig(input) {\n  if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('Preset must be an object.');\n  if (Object.keys(input).some(key => !keys.includes(key))) throw new Error('Unknown preset field.');\n  const c = {...DEFAULT, ...input};\n  if (c.version !== 1) throw new Error('Unsupported preset version.');\n  if (!SCENES.includes(c.scene)) throw new Error('Unknown scene.');\n  if (!Object.hasOwn(PALETTES, c.palette)) throw new Error('Unknown palette.');\n  number(c.seed, 0, 4294967295, true, 'seed');\n  number(c.density, 8, 64, true, 'density');\n  number(c.motion, 0, 1, false, 'motion');\n  number(c.duration, 4, 60, false, 'duration');\n  number(c.width, 320, 3840, true, 'width');\n  number(c.height, 320, 3840, true, 'height');\n  if (c.width * c.height > 8294400) throw new Error('Resolution exceeds 8,294,400 pixels.');\n  return Object.freeze(c);\n}\nfunction parsePreset(text) {\n  if (typeof text !== 'string' || text.length > 8192) throw new Error('Preset is too large (8 KB maximum).');\n  return validateConfig(JSON.parse(text));\n}\nfunction serializePreset(config) { return JSON.stringify(validateConfig(config), null, 2) + '\\n'; }\nfunction loopPhase(time, duration) {\n  if (!Number.isFinite(time) || !Number.isFinite(duration) || duration <= 0) throw new Error('Invalid time or duration.');\n  return ((time % duration) + duration) % duration / duration;\n}\nfunction randomSequence(seed) {\n  let state = seed >>> 0;\n  return () => {\n    state = (state + 0x6D2B79F5) >>> 0;\n    let t = Math.imul(state ^ state >>> 15, state | 1);\n    t ^= t + Math.imul(t ^ t >>> 7, t | 61);\n    return ((t ^ t >>> 14) >>> 0) / 4294967296;\n  };\n}\n\nconst TAU = Math.PI * 2;\nconst f = n => Number(n.toFixed(3));\n/** Pure SVG renderer. No DOM, external assets, scripts, fonts, or network. */\nfunction renderSVG(input, seconds = 0) {\n  const c = validateConfig(input);\n  const p = loopPhase(seconds, c.duration);\n  const r = randomSequence(c.seed);\n  const [bg, mid, light, accent] = PALETTES[c.palette];\n  const w = c.width, h = c.height, unit = Math.min(w,h), a = p * TAU;\n  const shapes = [];\n  if (c.scene === 'water') {\n    // Fixed centers and oscillating radial fields: no wrap discontinuity.\n    for (let i = 0; i < c.density; i++) {\n      const x = r()*w, y = r()*h, radius = unit*(0.04+r()*0.15), phase = r()*TAU;\n      const pulse = (1+c.motion*Math.sin(a+phase))/2;\n      for(let j=0;j<4;j++) {\n        const rad = radius*(0.5+j*0.28+c.motion*0.18*Math.sin(a+phase));\n        shapes.push(`<ellipse cx=\"${f(x)}\" cy=\"${f(y)}\" rx=\"${f(rad)}\" ry=\"${f(rad*0.38)}\" fill=\"none\" stroke=\"${i%6===0?accent:light}\" stroke-width=\"${f(unit/900)}\" opacity=\"${f(0.035+(0.14+0.07*pulse)*(1-j/5))}\"/>`);\n      }\n    }\n  } else if (c.scene === 'rain') {\n    for (let i=0;i<c.density*3;i++) {\n      const x=r()*w, offset=r(), length=unit*(0.025+r()*0.1), cycles=1+Math.floor(r()*2);\n      // Vertical travel wraps only outside the viewport. motion=0 is static.\n      const travel=c.motion===0?offset:(offset+p*cycles)%1;\n      const y=travel*(h+2*length)-length;\n      const drift=c.motion*unit*0.025*Math.sin(a+r()*TAU);\n      shapes.push(`<path d=\"M ${f(x+drift)} ${f(y)} l ${f(-length*0.15)} ${f(length)}\" stroke=\"${light}\" stroke-width=\"${f(unit*(0.0008+r()*0.001))}\" opacity=\"${f(0.1+r()*0.3)}\" stroke-linecap=\"round\"/>`);\n    }\n    for(let i=0;i<7;i++) {\n      const y=h*(0.78+i*0.045);\n      shapes.push(`<path d=\"M 0 ${f(y)} Q ${f(w/2)} ${f(y-18*c.motion*Math.sin(a+i))} ${w} ${f(y)}\" fill=\"none\" stroke=\"${mid}\" opacity=\"0.25\"/>`);\n    }\n  } else {\n    for(let i=0;i<c.density;i++) {\n      const x=r()*w,y=r()*h,size=unit*(0.07+r()*0.15),phase=r()*TAU;\n      const angle=r()*360+12*c.motion*Math.sin(a+phase);\n      const dx=unit*0.025*c.motion*Math.sin(a+phase);\n      const dy=unit*0.015*c.motion*Math.cos(a+phase);\n      shapes.push(`<g transform=\"translate(${f(x+dx)} ${f(y+dy)}) rotate(${f(angle)})\" opacity=\"${f(0.16+r()*0.3)}\"><path d=\"M ${f(-size)} 0 Q 0 ${f(-size*0.8)} ${f(size)} 0 Q 0 ${f(size*0.8)} ${f(-size)} 0\" fill=\"${i%5===0?accent:mid}\"/><path d=\"M ${f(-size)} 0 L ${f(size)} 0\" stroke=\"${light}\" stroke-width=\"${f(unit/1300)}\" opacity=\"0.5\"/></g>`);\n    }\n  }\n  return `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${w}\" height=\"${h}\" viewBox=\"0 0 ${w} ${h}\" role=\"img\" aria-label=\"${c.scene} generative composition\"><defs><radialGradient id=\"glow\"><stop stop-color=\"${mid}\" stop-opacity=\"0.24\"/><stop offset=\"1\" stop-color=\"${bg}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"${w}\" height=\"${h}\" fill=\"${bg}\"/><ellipse cx=\"${f(w*0.62)}\" cy=\"${f(h*0.42)}\" rx=\"${f(w*0.65)}\" ry=\"${f(h*0.8)}\" fill=\"url(#glow)\"/>${shapes.join('')}<rect x=\"1\" y=\"1\" width=\"${w-2}\" height=\"${h-2}\" fill=\"none\" stroke=\"${light}\" stroke-opacity=\"0.06\"/></svg>`;\n}\n";
+const $ = id => document.getElementById(id);
+const strings = {
+  en: {eyebrow:'A FIELD GUIDE TO SLOWER IMAGES',lede:'Compose a little rain. A surface of water. A canopy in motion.',timeline:'Timeline',fullscreen:'Fullscreen',caption:'A composition, not a prescription. Move at your own pace.',compose:'COMPOSE',scene:'Scene',water:'Water / ripples',rain:'Rain / falling lines',canopy:'Canopy / drifting leaves',palette:'Palette',moss:'Moss & brass',dusk:'Dusk & clay',ink:'Ink & mist',density:'Density',motion:'Motion amplitude',duration:'Loop duration · seconds',seed:'Seed',shuffle:'Shuffle',format:'Export format',png:'Export PNG',svg:'Export SVG',save:'Save preset',import:'Import preset',html:'Export loop HTML',reset:'Reset',note1:'Made for making.',body1:'A small instrument for artists, filmmakers and creative coders. Export a still, exchange a preset, or take a loop into an installation.',note2:'Yours, locally.',body2:'No account. No analytics. No external assets. Your composition stays in this browser unless you export it.',note3:'Leave room for attention.',body3:'Inspired by natural rhythms. This is an artistic tool, without claims about brain activity, therapy or measured attention restoration.',play:'Play',pause:'Pause',saved:'Preset saved.',imported:'Preset imported.',exported:'Export ready.',invalid:'Could not use that value or file. ',storage:'Browser storage unavailable; exports still work.',reduce:'Reduced motion is enabled. Playback starts only when you press Play.',corrupt:'The saved preset was invalid. Defaults restored.'},
+  zh: {eyebrow:'为缓慢的影像，留下一点空间',lede:'一场雨，一池水，一片轻轻摇动的树冠。',timeline:'时间轴',fullscreen:'全屏',caption:'这是创作工具。请按自己的节奏观看。',compose:'创作参数',scene:'场景',water:'水面 / 涟漪',rain:'雨 / 垂落的线',canopy:'树冠 / 浮动的叶',palette:'色调',moss:'苔绿与铜金',dusk:'暮色与陶土',ink:'水墨与薄雾',density:'密度',motion:'运动幅度',duration:'循环时长 · 秒',seed:'随机种子',shuffle:'换一组',format:'导出画幅',png:'导出 PNG',svg:'导出 SVG',save:'保存预设',import:'导入预设',html:'导出循环 HTML',reset:'重置',note1:'为创作而生。',body1:'给艺术家、影像作者与创意开发者的小工具。导出静帧，交换预设，或将循环带进装置。',note2:'在本地，属于你。',body2:'无需账号，不采集使用数据，不加载外部素材。除非主动导出，你的构图保存在当前浏览器。',note3:'给注意力留白。',body3:'灵感来自自然节律。这是艺术工具，不宣称改变脑活动、治疗疾病或经测量证实恢复注意力。',play:'播放',pause:'暂停',saved:'预设已保存。',imported:'预设已导入。',exported:'导出已就绪。',invalid:'无法使用该数值或文件。',storage:'浏览器存储不可用，仍可导出文件。',reduce:'系统已启用减少动态效果。按下播放才会开始动画。',corrupt:'已保存的预设无效，已恢复默认值。'}
+};
+let config = DEFAULT, lang = navigator.language.startsWith('zh') ? 'zh':'en';
+let elapsed=0,playing=false,last=null,raf=0,storageNotice='';
+try { const s=localStorage.getItem('sfs:config'); if(s) config=parsePreset(s); const l=localStorage.getItem('sfs:language');if(l==='zh'||l==='en')lang=l; } catch { storageNotice='corrupt'; }
+const t=key=>strings[lang][key];
+function status(message){$('status').textContent=message;}
+function persist(){try{localStorage.setItem('sfs:config',serializePreset(config));localStorage.setItem('sfs:language',lang);}catch{status(t('storage'));}}
+function draw(){
+  $('art').innerHTML=renderSVG(config,elapsed);
+  $('time').value=String(Math.round(elapsed/config.duration*1000));
+  $('clock').textContent=`${elapsed.toFixed(1)} / ${config.duration} s`;
+  $('sceneTag').textContent=`0${['water','rain','canopy'].indexOf(config.scene)+1} / ${config.scene.toUpperCase()}`;
+}
+function sync(){
+  for(const k of ['scene','palette','seed','density','duration'])$(k).value=config[k];
+  $('motion').value=Math.round(config.motion*100);
+  $('densityValue').textContent=config.density;$('motionValue').textContent=`${Math.round(config.motion*100)}%`;
+  const format=`${config.width},${config.height}`;
+  for(const option of Array.from($('format').options))if(option.dataset.custom)option.remove();
+  if(!Array.from($('format').options).some(o=>o.value===format)){
+    const option=new Option(`${config.width} × ${config.height}`,format);option.dataset.custom='true';$('format').add(option);
+  }
+  $('format').value=format;
+  $('stage').style.aspectRatio=`${config.width}/${config.height}`;
+  draw();
+}
+function localize(){
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+  $('language').textContent=lang==='zh'?'EN':'中文';
+  $('language').setAttribute('aria-label',lang==='zh'?'Switch to English':'切换到中文');
+  $('play').textContent=t(playing?'pause':'play');
+}
+function stop(){playing=false;last=null;cancelAnimationFrame(raf);$('play').textContent=t('play');$('play').setAttribute('aria-pressed','false');}
+function tick(now){if(!playing)return;if(last!==null)elapsed=(elapsed+(now-last)/1000)%config.duration;last=now;draw();raf=requestAnimationFrame(tick);}
+$('play').onclick=()=>{if(playing)stop();else{playing=true;last=null;$('play').textContent=t('pause');$('play').setAttribute('aria-pressed','true');raf=requestAnimationFrame(tick);}};
+$('time').oninput=()=>{stop();elapsed=Number($('time').value)/1000*config.duration;draw();};
+function update(patch){try{config=validateConfig({...config,...patch});elapsed%=config.duration;status('');sync();persist();}catch(error){status(t('invalid')+error.message);sync();}}
+for(const k of ['scene','palette'])$(k).onchange=()=>update({[k]:$(k).value});
+for(const k of ['seed','duration'])$(k).onchange=()=>update({[k]:Number($(k).value)});
+$('density').oninput=()=>update({density:Number($('density').value)});
+$('motion').oninput=()=>update({motion:Number($('motion').value)/100});
+$('format').onchange=()=>{const [width,height]=$('format').value.split(',').map(Number);update({width,height});};
+$('random').onclick=()=>update({seed:crypto.getRandomValues(new Uint32Array(1))[0]});
+$('reset').onclick=()=>{stop();elapsed=0;config=DEFAULT;sync();persist();status('');};
+$('language').onclick=()=>{lang=lang==='zh'?'en':'zh';localize();persist();};
+function download(blob,name){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);status(t('exported'));}
+const filename=ext=>`soft-fascination-${config.scene}-${config.seed}.${ext}`;
+$('save').onclick=()=>{download(new Blob([serializePreset(config)],{type:'application/json'}),filename('json'));status(t('saved'));};
+$('svg').onclick=()=>download(new Blob([renderSVG(config,elapsed)],{type:'image/svg+xml'}),filename('svg'));
+$('html').onclick=()=>download(new Blob([createPlayerHTML(config,ENGINE_SOURCE)],{type:'text/html'}),filename('html'));
+$('png').onclick=async()=>{
+  $('png').disabled=true;const snapshot=config;const svg=renderSVG(snapshot,elapsed);
+  const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'}));
+  try{const image=new Image();image.src=url;await image.decode();const canvas=document.createElement('canvas');canvas.width=snapshot.width;canvas.height=snapshot.height;canvas.getContext('2d').drawImage(image,0,0);const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob)throw new Error('PNG export unavailable. Try SVG.');download(blob,`soft-fascination-${snapshot.scene}-${snapshot.seed}.png`);}catch(error){status(error.message);}finally{URL.revokeObjectURL(url);$('png').disabled=false;}
+};
+$('import').onclick=()=>$('file').click();
+$('file').onchange=async()=>{const file=$('file').files[0];if(!file)return;try{if(file.size>8192)throw new Error('Preset exceeds 8 KB.');const imported=parsePreset(await file.text());stop();config=imported;elapsed=0;sync();persist();status(t('imported'));}catch(error){status(t('invalid')+error.message);}finally{$('file').value='';}};
+$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stage').requestFullscreen();}catch{status(lang==='zh'?'此浏览器不支持全屏。':'Fullscreen is unavailable in this browser.');}};
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+reduced.addEventListener('change',()=>{if(reduced.matches){stop();status(t('reduce'));}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+localize();sync();if(storageNotice)status(t(storageNotice));else if(reduced.matches)status(t('reduce'));
+</script></body></html>

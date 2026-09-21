@@ -1,0 +1,11 @@
+node_modules/
+dist/
+output-frames/
+coverage/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
