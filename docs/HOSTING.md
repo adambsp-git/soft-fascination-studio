@@ -1,5 +1,7 @@
 # Static hosting
 
+Current public demo: https://adambsp-git.github.io/soft-fascination-studio/
+
 Run `npm run build`, `npm run check`, then `npm test` before deployment.
 
 ## GitHub Pages from a branch

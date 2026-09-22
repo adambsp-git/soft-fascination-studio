@@ -21,13 +21,28 @@ Updated: 2026-09-22. Local runtime: Node.js 24 on Linux.
 
 Additional 0.2.0 regression coverage: complete preset restoration through undo/redo; invalid/duplicate edits preserving redo; redo branch truncation; bounded immutable history; gallery/example parity; entry and module paths under a nested hosting prefix; standalone entry parity.
 
+## Hosted browser checks
+
+Public demo: https://adambsp-git.github.io/soft-fascination-studio/
+
+The v0.2 pull request passed all four CI checks (Node 22/24, push and pull-request runs) before merge: https://github.com/adambsp-git/soft-fascination-studio/pull/1 . GitHub Pages deployment succeeded from `main`.
+
+On 2026-09-22, the hosted editor was exercised in the available cloud Chrome browser (exact browser version unavailable):
+
+- All three presets loaded with their corresponding scene, palette, dimensions and timing.
+- Undo/redo restored the previous complete composition; Ctrl+Z worked from a preset button.
+- Refresh restored the last saved composition and started paused; history was correctly empty after reload.
+- English/Chinese switching updated controls and region labels.
+- Playback advanced the timeline; Pause stopped it.
+- The published rain JSON example imported through the file chooser, including portrait dimensions.
+- PNG generation reached “Export ready.”, but the browser download event timed out. The downloaded file and its dimensions have **not** been verified.
+- Visual inspection found that range labels were associated with the nested outputs instead of their sliders. Explicit `for` attributes were added to the density and motion labels.
+
 ## Not completed
 
-The available cloud browser rejected local-file navigation because only HTTP/HTTPS navigation was permitted. No attempt was made to bypass that restriction. Consequently, full browser execution, exported PNG downloads, localStorage behavior, fullscreen, responsiveness, keyboard navigation, reduced-motion behavior and import/export dialogs have **not** been manually verified in this preparation session. Source review and syntax tests are not substitutes for those checks.
+Cross-browser and real-device acceptance remain pending. The available cloud browser permits only HTTP/HTTPS navigation, so direct local-file execution was not verified. No screen-reader audit, unavailable-storage test, reduced-motion system setting test, fullscreen acceptance, prolonged playback, frame-rate benchmark or external security audit is claimed. Downloaded export files and offline exported-player execution remain unverified.
 
-The initial public GitHub Actions run passed on Node 22 and 24: https://github.com/adambsp-git/soft-fascination-studio/actions/runs/35628302973 . That run validates the initial version, not subsequent changes. The latest 0.2.0 changes passed local build, syntax checks and all 24 tests. No mobile-device testing, screen-reader audit, prolonged playback, frame-rate benchmark or external security audit is claimed.
-
-## Required manual acceptance before public release
+## Remaining acceptance before a stable release
 
 - [ ] Open studio.html and the localhost editor in Chrome, Firefox and Safari.
 - [ ] Switch scene/palette, change numeric controls and confirm a visible update.
