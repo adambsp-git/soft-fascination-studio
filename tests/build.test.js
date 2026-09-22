@@ -13,6 +13,7 @@ test('standalone editor and player contain exactly one syntactically valid inlin
   const root=await mkdtemp(join(tmpdir(),'sfs-build-'));
   try{
     const editor=await readFile('studio.html','utf8');
+    assert.equal(await readFile('index.html','utf8'),editor);
     const player=createPlayerHTML(DEFAULT,await engineSource());
     for(const [i,html] of [editor,player].entries()){
       assert.ok(html.includes('<script type="module">'));
@@ -29,4 +30,22 @@ test('standalone editor and player contain exactly one syntactically valid inlin
     const app=await readFile('web/app.js','utf8');
     for(const match of app.matchAll(/\$\('([^']+)'\)/g))assert.ok(editor.includes(`id="${match[1]}"`),match[1]);
   }finally{await rm(root,{recursive:true,force:true});}
+});
+
+test('static entry assets and module imports resolve under nested hosting paths',async()=>{
+  const rootPage=await readFile('dist/index.html','utf8');
+  const nestedPage=await readFile('dist/web/index.html','utf8');
+  for(const [url,html] of [['https://example.test/studio/',rootPage],['https://example.test/studio/web/index.html',nestedPage]]){
+    for(const match of html.matchAll(/(?:src|href)="([^"]+)"/g)){
+      if(match[1].startsWith('#'))continue;
+      const resolved=new URL(match[1],url);
+      assert.ok(resolved.pathname.startsWith('/studio/'));
+      await readFile('dist/'+resolved.pathname.slice('/studio/'.length));
+    }
+  }
+  const app=await readFile('dist/web/app.js','utf8');
+  for(const match of app.matchAll(/^import .* from '([^']+)';/gm)){
+    const path=new URL(match[1],'https://example.test/studio/web/app.js').pathname;
+    assert.ok(path.startsWith('/studio/'));await readFile('dist/'+path.slice(8));
+  }
 });
