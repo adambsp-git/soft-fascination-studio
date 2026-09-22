@@ -1,17 +1,29 @@
 {
   "name": "soft-fascination-studio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Deterministic, seamless-loop generative visuals for artists and independent studios.",
   "type": "module",
   "private": true,
   "license": "MIT",
-  "engines": { "node": ">=22" },
-  "exports": { ".": "./src/engine.js", "./config": "./src/config.js" },
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./src/engine.js",
+    "./config": "./src/config.js"
+  },
   "scripts": {
     "start": "node scripts/serve.js",
     "test": "node --test",
     "check": "node scripts/check.js",
     "frames": "node scripts/export-frames.js",
     "build": "node scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adambsp-git/soft-fascination-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adambsp-git/soft-fascination-studio/issues"
   }
 }
