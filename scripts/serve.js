@@ -8,7 +8,7 @@ export function makeServer(){return createServer(async(req,res)=>{
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405,{'Allow':'GET, HEAD'});return res.end();}
   let pathname;
   try{pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);}catch{res.writeHead(400);return res.end();}
-  if(pathname==='/')pathname='/web/index.html';
+  if(pathname==='/'){res.writeHead(302,{'Location':'/web/index.html'});return res.end();}
   // Do not serve project docs, tests, source maps, dotfiles or traversal paths.
   const segments=pathname.split('/');
   if(!/^\/(web|src|examples)\//.test(pathname)||segments.some(s=>s.startsWith('.'))||pathname.includes('\\')||pathname.includes('\0')||!Object.hasOwn(types,extname(pathname))){res.writeHead(404);return res.end();}
