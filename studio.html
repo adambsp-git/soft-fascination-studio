@@ -11,8 +11,8 @@
 <div class="history-controls"><button id="undo" data-i18n="undo" disabled>Undo</button><button id="redo" data-i18n="redo" disabled>Redo</button></div>
 <label><span data-i18n="scene">Scene</span><select id="scene"><option value="water" data-i18n="water">Water / ripples</option><option value="rain" data-i18n="rain">Rain / falling lines</option><option value="canopy" data-i18n="canopy">Canopy / drifting leaves</option></select></label>
 <label><span data-i18n="palette">Palette</span><select id="palette"><option value="moss" data-i18n="moss">Moss & brass</option><option value="dusk" data-i18n="dusk">Dusk & clay</option><option value="ink" data-i18n="ink">Ink & mist</option></select></label>
-<label><span><span data-i18n="density">Density</span> <output id="densityValue">28</output></span><input id="density" type="range" min="8" max="64" value="28"></label>
-<label><span><span data-i18n="motion">Motion amplitude</span> <output id="motionValue">55%</output></span><input id="motion" type="range" min="0" max="100" value="55"></label>
+<label for="density"><span><span data-i18n="density">Density</span> <output id="densityValue">28</output></span><input id="density" type="range" min="8" max="64" value="28"></label>
+<label for="motion"><span><span data-i18n="motion">Motion amplitude</span> <output id="motionValue">55%</output></span><input id="motion" type="range" min="0" max="100" value="55"></label>
 <label><span data-i18n="duration">Loop duration · seconds</span><input id="duration" type="number" min="4" max="60" step="1" value="12"></label>
 <div class="seed-row"><label><span data-i18n="seed">Seed</span><input id="seed" type="number" min="0" max="4294967295" step="1" value="1987"></label><button id="random" data-i18n="shuffle">Shuffle</button></div>
 <label><span data-i18n="format">Export format</span><select id="format"><option value="1280,720">Landscape · 1280 × 720</option><option value="1080,1920">Portrait · 1080 × 1920</option><option value="1080,1080">Square · 1080 × 1080</option><option value="1920,1080">Full HD · 1920 × 1080</option></select></label>

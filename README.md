@@ -12,6 +12,8 @@ Create deterministic generative loops inspired by rain, water and leaves. Design
 
 ## Use it now
 
+[Open the live studio](https://adambsp-git.github.io/soft-fascination-studio/) — no account or installation required.
+
 Download this repository and open **`studio.html`** in a modern desktop browser. The complete editor, styles and renderer are embedded in that file. No installation or network is required. Start playback explicitly with **Play**.
 
 If your browser restricts local files or downloads, use the local server:
@@ -58,13 +60,13 @@ This writes 288 SVG frames for a 12-second loop and a manifest. It excludes the 
 ## Development
 
 ```sh
-npm run build  # rebuild standalone studio.html, web/runtime-source.js and dist/
+npm run build  # rebuild index.html, studio.html, web/runtime-source.js and dist/
 npm run check  # check JavaScript syntax
 npm test       # unit and local integration tests using Node's built-in runner
 npm start
 ```
 
-`web/runtime-source.js` and `studio.html` are generated and committed so a fresh download runs without a build. Regenerate both after changing source. `dist/` is disposable and ignored. The static build expects hosting at the origin root; for a subdirectory host, use the self-contained `studio.html`. No hosting or CI run is claimed by this source release.
+`index.html`, `studio.html` and `web/runtime-source.js` are generated and committed so a fresh download runs without a build. Regenerate them after changing source. `dist/` is disposable and ignored. Both the standalone entry and the modular static build support subdirectory hosting. See [hosting instructions](docs/HOSTING.md) and the [validation record](docs/VALIDATION.md) for CI and browser results.
 
 ## Why this project exists
 
