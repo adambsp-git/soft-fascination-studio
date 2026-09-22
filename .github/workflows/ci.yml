@@ -21,4 +21,4 @@ jobs:
       - run: npm run build
       - run: npm run check
       - run: npm test
-      - run: git diff --exit-code -- studio.html web/runtime-source.js
+      - run: git diff --exit-code -- studio.html index.html web/runtime-source.js
