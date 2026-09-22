@@ -11,12 +11,16 @@ export async function build(){
   await rm(resolve(root,'dist'),{recursive:true,force:true});
   await mkdir(resolve(root,'dist'),{recursive:true});
   for(const dir of ['src','web'])await cp(resolve(root,dir),resolve(root,'dist',dir),{recursive:true});
-  await cp(resolve(root,'web/index.html'),resolve(root,'dist/index.html'));
+  const entry = await readFile(resolve(root,'web/index.html'),'utf8');
+  await writeFile(resolve(root,'dist/index.html'),entry.replace('href="./style.css"','href="./web/style.css"').replace('src="./app.js"','src="./web/app.js"'));
+  await writeFile(resolve(root,'dist/.nojekyll'),'');
   const [page, css, player, app] = await Promise.all(['web/index.html','web/style.css','src/player.js','web/app.js'].map(path=>readFile(resolve(root,path),'utf8')));
   const source = await engineSource();
-  const module = source + '\n' + player.replace(/^import .*;\n/gm,'').replace(/^export /gm,'') + '\nconst ENGINE_SOURCE = ' + JSON.stringify(source) + ';\n' + app.replace(/^import .*;\n/gm,'');
-  const standalone = page.replace('<link rel="stylesheet" href="/web/style.css">', '<style>'+css+'</style>').replace('<script type="module" src="/web/app.js"></script>', () => '<script type="module">'+module.replaceAll('</script','<\\/script')+'</script>');
+  const helpers = (await Promise.all(['src/history.js','src/presets.js'].map(p=>readFile(resolve(root,p),'utf8')))).join('\n').replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
+  const module = source + '\n' + helpers + '\n' + player.replace(/^import .*;\n/gm,'').replace(/^export /gm,'') + '\nconst ENGINE_SOURCE = ' + JSON.stringify(source) + ';\n' + app.replace(/^import .*;\n/gm,'');
+  const standalone = page.replace('<link rel="stylesheet" href="./style.css">', '<style>'+css+'</style>').replace('<script type="module" src="./app.js"></script>', () => '<script type="module">'+module.replaceAll('</script','<\\/script')+'</script>');
   await writeFile(resolve(root,'studio.html'),standalone);
+  await writeFile(resolve(root,'index.html'),standalone);
   await writeFile(resolve(root,'dist/studio.html'),standalone);
   console.log('Built dist/ and studio.html (standalone offline editor).');
 }
