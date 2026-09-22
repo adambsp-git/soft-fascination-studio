@@ -6,6 +6,14 @@ Open `studio.html`, or run `npm start` and use the local address. Choose water, 
 
 播放默认关闭。点击「播放」开始，「暂停」停止；拖动时间轴可选择静帧。页面隐藏后会暂停，返回时不会自行恢复。导入新预设会暂停并回到起点。切换简体中文或英文不改变画面参数。
 
+## Starter scenes and history / 场景与撤销
+
+Choose Lake at rest, Rain in ink or Canopy at dusk to load an original project example. Loading stops playback and starts at zero. Undo restores the previous composition.
+
+Undo/Redo retains up to 50 composition changes in this tab, including imports, resets and preset selection. Ctrl/Cmd+Z undoes; Shift+Ctrl/Cmd+Z redoes when focus is outside an editable field. Inside inputs, native text editing takes priority. History is not saved across reloads; the current composition is. Timeline position is not part of history. Sliders commit one history entry when a change is completed.
+
+点击「湖面微光」「水墨细雨」「暮色树冠」即可开始。撤销和重做只恢复构图参数，不恢复播放时间；刷新会清空历史，但保留当前已保存构图。
+
 ## Save and exchange
 
 “Save preset” downloads a small JSON file. It contains scene parameters and dimensions, not an image or timeline position. Import restores the composition at time zero. UI parameter changes are also saved locally when storage is available; browser settings can disable or clear this storage. Reset replaces the saved composition with the defaults.

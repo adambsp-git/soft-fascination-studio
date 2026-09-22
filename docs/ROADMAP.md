@@ -2,12 +2,16 @@
 
 These are proposed future tasks, not existing features or external commitments.
 
-## Before a public 0.1 release
+## Completed
+
+- Public MIT repository and initial Node 22/24 CI run.
+- Three built-in example presets, 50-step undo/redo and portable static hosting.
+
+## Next validation priorities
 
 - Complete manual desktop/mobile browser acceptance tests in VALIDATION.md.
 - Review English/Chinese labels and keyboard-only operation with a second person.
-- Confirm MIT licensing and project naming with the project owner.
-- Publish to a separate public repository, run the supplied CI and tag the actual release.
+- Publish a verified browser demo and record actual device results before tagging a stable release.
 
 ## Small first contributions
 

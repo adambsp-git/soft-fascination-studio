@@ -1,12 +1,12 @@
 # Validation record
 
-Prepared: 2026-09-21. Runtime actually used: Node.js v24.19.0 on Linux.
+Updated: 2026-09-22. Local runtime: Node.js 24 on Linux.
 
 ## Completed checks
 
 - `npm run build`: static build and self-contained editor generated successfully.
 - `npm run check`: source, editor, tooling and test JavaScript syntax checked.
-- `npm test`: 18 passing tests, covering:
+- `npm test`: 24 passing tests, covering:
   - schema round-trip, unknown-field and unsafe-input rejection;
   - seeded randomness and seed differences;
   - exact period endpoints for all three scenes;
@@ -19,11 +19,13 @@ Prepared: 2026-09-21. Runtime actually used: Node.js v24.19.0 on Linux.
   - frame CLI timestamps, manifest and refusal to overwrite an export directory.
 - All three example SVGs rasterized using the available Sharp tool and visually inspected as static frames. `examples/scene-overview.png` is an engine-output contact sheet, not an editor screenshot.
 
+Additional 0.2.0 regression coverage: complete preset restoration through undo/redo; invalid/duplicate edits preserving redo; redo branch truncation; bounded immutable history; gallery/example parity; entry and module paths under a nested hosting prefix; standalone entry parity.
+
 ## Not completed
 
 The available cloud browser rejected local-file navigation because only HTTP/HTTPS navigation was permitted. No attempt was made to bypass that restriction. Consequently, full browser execution, exported PNG downloads, localStorage behavior, fullscreen, responsiveness, keyboard navigation, reduced-motion behavior and import/export dialogs have **not** been manually verified in this preparation session. Source review and syntax tests are not substitutes for those checks.
 
-Node 22 and hosted GitHub Actions runs are configured but have not been executed. No mobile-device testing, screen-reader audit, prolonged playback, frame-rate benchmark or external security audit is claimed.
+The initial public GitHub Actions run passed on Node 22 and 24: https://github.com/adambsp-git/soft-fascination-studio/actions/runs/35628302973 . That run validates the initial version, not subsequent changes. The latest 0.2.0 changes passed local build, syntax checks and all 24 tests. No mobile-device testing, screen-reader audit, prolonged playback, frame-rate benchmark or external security audit is claimed.
 
 ## Required manual acceptance before public release
 
